@@ -1,0 +1,55 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 512 512" 
+  width="100%" 
+  height="100%"
+>
+  <!-- Outer circle with gap on the right -->
+  <path 
+    d="M 450 200 A 210 210 0 1 0 450 312" 
+    fill="none" 
+    stroke="#111638" 
+    stroke-width="26" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Trunk at the bottom center -->
+  <path 
+    d="M 256 436 V 320" 
+    fill="none" 
+    stroke="#111638" 
+    stroke-width="26" 
+    stroke-linecap="round"
+  />
+
+  <!-- Top Wave (curves down, up, and loops left inside) -->
+  <path 
+    d="M 450 200 C 370 200, 350 240, 290 240 C 210 240, 170 190, 170 146 C 170 96, 220 76, 276 76 C 330 76, 366 110, 366 150" 
+    fill="none" 
+    stroke="#111638" 
+    stroke-width="26" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Middle Wave (curves down, up, and flows left) -->
+  <path 
+    d="M 460 256 C 380 256, 350 300, 290 300 C 220 300, 204 250, 204 212 C 204 156, 246 130, 296 130" 
+    fill="none" 
+    stroke="#111638" 
+    stroke-width="26" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Bottom Wave (curves down, up, and flows left joining trunk area) -->
+  <path 
+    d="M 450 312 C 370 312, 350 360, 290 360 C 230 360, 236 300, 236 270" 
+    fill="none" 
+    stroke="#111638" 
+    stroke-width="26" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+</svg>
