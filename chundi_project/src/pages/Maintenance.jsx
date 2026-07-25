@@ -71,33 +71,7 @@ function Maintenance() {
                 <path d="M9 8H7v3h2v9h3v-9h3.6L18 8h-3V6c0-.5.5-1 1-1h2V2h-3C11.5 2 9 4.5 9 8z" />
               </svg>
             </a>
-
-            {/* OK (Odnoklassniki) */}
-            <a
-              href="https://ok.ru"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="maintenance-social-circle"
-              aria-label="Odnoklassniki"
-            >
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path fillRule="evenodd" clipRule="evenodd" d="M12 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm0 1.5a7.994 7.994 0 00-6.07 2.808 1.25 1.25 0 101.905 1.623A5.496 5.496 0 0112 14c1.673 0 3.167.747 4.165 1.93a1.25 1.25 0 101.905-1.622A7.994 7.994 0 0012 12.5z" />
-              </svg>
-            </a>
-
-            {/* VK */}
-            <a
-              href="https://vk.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="maintenance-social-circle"
-              aria-label="VK"
-            >
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.45 5.92c.14-.46 0-.8-.65-.8h-2.1c-.56 0-.82.3-.96.62 0 0-1.1 2.6-2.6 4.3-.5.5-.7.66-.95.66-.13 0-.32-.16-.32-.62V5.92c0-.56-.16-.8-.63-.8h-3.3c-.35 0-.57.26-.57.5 0 .53.8.66.88 2.16v3.06c0 .67-.12.8-.39.8-.72 0-2.47-2.62-3.5-5.63-.22-.63-.44-.8-.98-.8H5.16c-.63 0-.75.3-.75.63 0 .6.77 3.53 3.6 7.5 1.88 2.7 4.54 4.15 6.95 4.15 1.45 0 1.63-.32 1.63-.88v-1.9c0-.63.13-.76.58-.76.32 0 .88.16 2.18 1.42 1.5 1.5 1.74 2.17 2.6 2.17h2.1c.62 0 .94-.3.76-.92-.2-.6-.88-1.47-1.8-2.5-.5-.6-1.25-1.24-1.47-1.56-.3-.4-.2-.58 0-.9 0 0 2.5-3.56 2.77-4.78z" />
-              </svg>
-            </a>
-
+            
             {/* Twitter */}
             <a
               href="https://twitter.com"
