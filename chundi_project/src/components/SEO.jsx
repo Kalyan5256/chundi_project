@@ -5,7 +5,8 @@ export default function SEO({
   description,
   keywords,
   image,
-  url
+  url,
+  schemaMarkup
 }) {
   return (
     <Helmet>
@@ -31,6 +32,12 @@ export default function SEO({
       />
 
       <link rel="canonical" href={url} />
+
+      {schemaMarkup && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
     </Helmet>
   );
 }

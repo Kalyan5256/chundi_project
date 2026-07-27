@@ -11,6 +11,38 @@ function Maintenance() {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const imageUrl = logoTextPng ? `${origin}${logoTextPng}` : '';
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${origin}/#webpage`,
+        "url": currentUrl,
+        "name": "Under Maintenance - Chundi",
+        "description": "We are currently working on improving our platform. Chundi will be back online shortly with a better experience.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": `${origin}/#website`,
+          "name": "Chundi",
+          "url": origin || "https://chundi.in"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${origin}/#organization`,
+        "name": "Chundi",
+        "url": origin || "https://chundi.in",
+        "logo": imageUrl,
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-123-4567",
+          "contactType": "technical support",
+          "email": "tech@chundi.com"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="maintenance-wrapper">
       <SEO
@@ -19,6 +51,7 @@ function Maintenance() {
         keywords="Chundi, Under Maintenance, Coming Soon, Tech Support"
         image={imageUrl}
         url={currentUrl}
+        schemaMarkup={schemaMarkup}
       />
       {/* Header / Brand Logo (Centered) */}
       <header className="maintenance-header">
