@@ -1,12 +1,25 @@
 import { useState } from 'react'
 import logoText from '../assets/logo_text.svg'
+import logoTextPng from '../assets/logo_text.png'
 import maintenanceVideo from '../assets/now_set_background_only_white.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faXTwitter, faTelegram } from '@fortawesome/free-brands-svg-icons'
+import SEO from '../components/SEO'
 
 function Maintenance() {
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const imageUrl = logoTextPng ? `${origin}${logoTextPng}` : '';
+
   return (
     <div className="maintenance-wrapper">
+      <SEO
+        title="Under Maintenance - Chundi"
+        description="We are currently working on improving our platform. Chundi will be back online shortly with a better experience."
+        keywords="Chundi, Under Maintenance, Coming Soon, Tech Support"
+        image={imageUrl}
+        url={currentUrl}
+      />
       {/* Header / Brand Logo (Centered) */}
       <header className="maintenance-header">
         <div className="maintenance-brand">
