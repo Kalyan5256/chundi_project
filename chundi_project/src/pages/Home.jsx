@@ -2,13 +2,25 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/hero.png'
+import SEO from '../components/SEO'
 import '../App.css'
 
 function Home() {
   const [count, setCount] = useState(0)
 
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const imageUrl = heroImg ? `${origin}${heroImg}` : '';
+
   return (
     <div style={{ width: '1126px', maxWidth: '100%', margin: '0 auto', borderInline: '1px solid var(--border)', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
+      <SEO
+        title="Chundi - Get Started with React & Vite"
+        description="Welcome to the Chundi home page. Start building high-performance modern web applications with React and Vite."
+        keywords="Chundi, React, Vite, Web Development, Custom Components"
+        image={imageUrl}
+        url={currentUrl}
+      />
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
