@@ -12,6 +12,35 @@ function Home() {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const imageUrl = heroImg ? `${origin}${heroImg}` : '';
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${origin}/#website`,
+        "url": origin || "https://chundi.in",
+        "name": "Chundi",
+        "description": "Welcome to the Chundi home page. Start building high-performance modern web applications with React and Vite.",
+        "publisher": {
+          "@id": `${origin}/#organization`
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${origin}/#organization`,
+        "name": "Chundi",
+        "url": origin || "https://chundi.in",
+        "logo": imageUrl,
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-123-4567",
+          "contactType": "technical support",
+          "email": "tech@chundi.com"
+        }
+      }
+    ]
+  };
+
   return (
     <div style={{ width: '1126px', maxWidth: '100%', margin: '0 auto', borderInline: '1px solid var(--border)', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
       <SEO
@@ -20,6 +49,7 @@ function Home() {
         keywords="Chundi, React, Vite, Web Development, Custom Components"
         image={imageUrl}
         url={currentUrl}
+        schemaMarkup={schemaMarkup}
       />
       <section id="center">
         <div className="hero">

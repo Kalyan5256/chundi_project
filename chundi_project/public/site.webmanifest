@@ -1,0 +1,17 @@
+{
+  "name": "Chundi Project",
+  "short_name": "Chundi",
+  "description": "Modern and high-performance React & Vite web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
