@@ -1,0 +1,100 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  role         String   // SUPER_ADMIN, ADMIN, TRAINER, VOLUNTEER
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Trainer {
+  id                   String     @id @default(uuid())
+  name                 String
+  photoUrl             String
+  bio                  String
+  missionStatement     String
+  locationsCovered     String     // Comma-separated or description
+  institutionsVisited  String     // Comma-separated or description
+  totalStudentsTrained Int        @default(0)
+  createdAt            DateTime   @default(now())
+  campaigns            Campaign[]
+}
+
+model State {
+  id        String     @id @default(uuid())
+  name      String     @unique
+  districts District[]
+}
+
+model District {
+  id           String        @id @default(uuid())
+  name         String
+  stateId      String
+  state        State         @relation(fields: [stateId], references: [id], onDelete: Cascade)
+  institutions Institution[]
+}
+
+model Institution {
+  id         String     @id @default(uuid())
+  name       String
+  districtId String
+  district   District   @relation(fields: [districtId], references: [id], onDelete: Cascade)
+  campaigns  Campaign[]
+}
+
+model Campaign {
+  id            String          @id @default(uuid())
+  year          Int
+  institutionId String
+  institution   Institution     @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  trainerId     String
+  trainer       Trainer         @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+  story         String
+  createdAt     DateTime        @default(now())
+  images        CampaignImage[]
+}
+
+model CampaignImage {
+  id         String   @id @default(uuid())
+  campaignId String
+  campaign   Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  imageUrl   String
+}
+
+model Award {
+  id          String @id @default(uuid())
+  title       String
+  imageUrl    String
+  category    String
+  year        Int
+  description String
+}
+
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model DonationSettings {
+  id               String @id @default(uuid())
+  qrCodeUrl        String
+  upiId            String
+  bankName         String
+  accountNumber    String
+  ifscCode         String
+  accountHolder    String
+  missionStatement String
+}
